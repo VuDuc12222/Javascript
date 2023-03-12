@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Random Array Generator </h1>
+    <div>
+        <h1>Length: </h1><input type="number" min="1" id="LengthInput">
+    </div>
+    <button onClick="Generate()">Generator</button>
+    <h1>Result: </h1>
+    <h1 id="Array"></h1>
+    <script type="text/javascript">
+        function Generate() {
+            let LengthInput = document.querySelector("#LengthInput");
+            let message = document.querySelector("#Array")
+            let n = LengthInput.value;
+            var array = [];
+            for (i = 0; i < n; i++) {
+                let a = Math.floor(Math.random() * n) + 1;
+                array.push(a)
+
+            }
+            document.getElementById('Array').innerHTML = '[' + array + ']'
+            console.log(array)
+        }
+    </script>
+</body>
+
+</html>
